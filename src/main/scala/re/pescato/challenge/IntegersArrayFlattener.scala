@@ -17,8 +17,8 @@ trait IntegersArrayFlattener {
   }.toEither
 
   /**
-   * Because of type erasure due to Array nesting, we lose some of the type benefits here.
-   * Also, since this array may contains also other types than integers, this might throw exceptions.
+   * Because of type erasure due to Array nesting, we lose some of the type safety benefits here.
+   * Also, since this array may contain also other types than integers, this might throw exceptions.
    */
   private def flattenArray(in: Array[Any]): Array[Int] = in flatMap {
     case h: Int => Array(h)                                   //lifting h to Array
