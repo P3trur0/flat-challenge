@@ -5,7 +5,7 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should
 
 class FlatArraySpec extends AnyFlatSpec with should.Matchers with EitherValues {
-  "FlatArray" should "flat an array of integers only" in {
+  "IntegersArrayFlattener" should "flat an array of integers only" in {
     val input = Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     val flattened = IntegersArrayFlattener.flatten(input)
     flattened.value should equal (input)
