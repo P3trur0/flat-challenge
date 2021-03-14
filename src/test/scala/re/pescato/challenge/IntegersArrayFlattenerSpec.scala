@@ -55,7 +55,7 @@ class IntegersArrayFlattenerSpec extends AnyFlatSpec with should.Matchers with E
     flattened.left.value shouldBe a [MatchError]
   }
 
-  //this behavior happens because of Scala weak performance, see https://scala-lang.org/files/archive/spec/2.13/03-types.html#weak-conformance
+  //this behavior happens because of Scala weak conformance, see https://scala-lang.org/files/archive/spec/2.13/03-types.html#weak-conformance
   it should "result in a Right case when Array[Int] contains Chars inside" in {
     val input: Array[Int] = Array(1, 2, 456, 'a')
     val flattened = IntegersArrayFlattener.flatten(input)
